@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title><%- title %></title>
+  </head>
+  <body>
+    <main>
+      <div id="parchment"></div>
+      <div id="contain">
+        <header>
+          <img src="/marker.png" alt="Quest Marker" width="50px" />
+          <h1>Message</h1>
+        </header>
+        <ul class="messageContainer">
+          <div class="messageBox">
+            <div class="messageHeader">
+              <h3 class="messageName"><%= message.user %></h3>
+              <p class="messageTime">
+                <strong>Posted:</strong> <%= timeDifference %>
+              </p>
+            </div>
+            <div class="messageMain">
+              <p><%= message.text %></p>
+            </div>
+            <div class="messageFooterDetails">
+              <p class="messageTime">
+                <strong>Exact time:</strong> <%=message.added %>
+              </p>
+            </div>
+          </div>
+        </ul>
+
+        <a href="/">
+          <button class="button">Go home!</button>
+        </a>
+      </div>
+    </main>
+
+    <svg>
+      <filter id="wavy2">
+        <feTurbulence
+          x="0"
+          y="0"
+          baseFrequency="0.02"
+          numOctaves="5"
+          seed="1"
+        />
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+      </filter>
+    </svg>
+
+    <footer>
+      <a href="">
+        <span>Made by Kim3n</span>
+      </a>
+    </footer>
+  </body>
+  <script src="/parchment.js"></script>
+</html>

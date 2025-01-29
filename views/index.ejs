@@ -1,0 +1,63 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <title><%- title %></title>
+  </head>
+  <body>
+    <main>
+      <div id="parchment"></div>
+      <div id="contain">
+        <header>
+          <img src ="/marker.png" alt="Quest Marker" width="50px"/>
+          <h1>Mini Message Board</h1>
+
+          <a href="/new"><button class="button">Post a message!</button></a>
+          <span>Total posts: <%= messages.length %></span>
+          <% if (Array.isArray(messages) && messages.length > 0) { %>
+            <span>Last post by: <%= messages[messages.length - 1].user %></span>
+          <% } %>
+        </header>
+  
+    
+        <div class="mainContainer">
+          <% if (!Array.isArray(messages) || messages.length === 0) { %>
+            <div class="empty-state">No messages yet. Be the first to post!</div>
+          <% } else { %>
+            <ul class="messageContainer">
+              <% for (let i = messages.length - 1; i >= 0; i--) { %>
+                <div class="messageBox">
+                  <div class="messageHeader">
+                    <h3 class="messageName"><%= messages[i].user %></h3>
+                    <p class="messageTime"><strong>Posted:</strong> <%= timeDifferences[i] %></p>
+                  </div>
+                  <div class="messageMain">
+                    <%= messages[i].text %>
+                  </div>
+                <div class="messageFooter">
+                  <a href="/message/<%= i %>"><button class="button">Open</button></a>
+                </div>
+                </div>
+              <% } %>
+            </ul>
+          <% } %>
+        </div>
+      </div>
+    </main>
+
+
+<svg>
+  <filter id="wavy2">
+    <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1" />
+    <feDisplacementMap in="SourceGraphic" scale="20" />
+  </filter>
+</svg>
+
+<footer>
+  <a href="">
+      <span>Made by Kim3n</span>
+  </a>
+</footer>
+  </body>
+  <script src="/parchment.js"></script>
+</html>

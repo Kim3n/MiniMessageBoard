@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Post a message!</title>
+  </head>
+  <body>
+    <main>
+      <div id="parchment"></div>
+      <div id="contain">
+        <header>
+          <img src="/quest.png" alt="Quest Marker" width="40px" />
+          <h1>Post a message!</h1>
+        </header>
+        <div class="mainContainer">
+          <form
+            method="POST"
+            id="newMessageForm"
+            class="messageForm"
+            action="/new"
+          >
+            <input
+              type="text"
+              name="nameField"
+              class="messageFormName"
+              required
+              placeholder="Name"
+            />
+            <textarea
+              type="text"
+              name="messageField"
+              required
+              placeholder="Message"
+              maxlength="256"
+              class="messageFormText"
+            ></textarea>
+            <button type="submit" name="formSubmit" class="button submit">
+              Submit
+            </button>
+          </form>
+          <a href="/"
+            ><button class="button back">
+              I changed my mind, take me back!
+            </button></a
+          >
+        </div>
+      </div>
+    </main>
+    <svg>
+      <filter id="wavy2">
+        <feTurbulence
+          x="0"
+          y="0"
+          baseFrequency="0.02"
+          numOctaves="5"
+          seed="1"
+        />
+        <feDisplacementMap in="SourceGraphic" scale="20" />
+      </filter>
+    </svg>
+
+    <footer>
+      <a href="">
+        <span>Made by Kim3n</span>
+      </a>
+    </footer>
+  </body>
+  <script src="/parchment.js"></script>
+</html>
