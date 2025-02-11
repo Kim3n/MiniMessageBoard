@@ -15,7 +15,7 @@
           <a href="/new"><button class="button">Post a message!</button></a>
           <span>Total posts: <%= messages.length %></span>
           <% if (Array.isArray(messages) && messages.length > 0) { %>
-            <span>Last post by: <%= messages[messages.length - 1].username %></span>
+            <span>Last post by: <%= messages[0].username%></span>
           <% } %>
           <% if (view === "safe") { %>
             <a href="/all"><button class="button">All Messages (Including Flagged)</button></a>
