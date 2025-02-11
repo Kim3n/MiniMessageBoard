@@ -7,7 +7,8 @@ const initDatabase = async () => {
         id SERIAL PRIMARY KEY,
         username VARCHAR(100) NOT NULL,
         text TEXT NOT NULL,
-        added TIMESTAMP NOT NULL
+        added TIMESTAMP NOT NULL,
+        flagged BOOLEAN NOT NULL DEFAULT FALSE
     );
 `;
 
