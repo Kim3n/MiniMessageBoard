@@ -92,11 +92,21 @@ p {
 
 .messageFooter {
   position: relative;
-
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
+}
+
+.messageFooter form {
+  margin: 0;
+}
+
+.flagged {
+  color: var(--time);
+  width: 30px;
+  height: 30px;
 }
 
 .messageFooterDetails {
